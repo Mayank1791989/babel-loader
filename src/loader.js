@@ -9,6 +9,7 @@ import CacheIdentifier from './utils/cache-identifier';
 import { genBabelConfigCacheIdentifier } from './utils/babel-config-cache-identifier';
 import isRelaySource from './utils/is-relay-source';
 import transform from './transform';
+import packageJson from '../package.json';
 
 export default async function loader(source: string, inputSourceMap: ?string) {
   const filename = this.resourcePath;
@@ -39,7 +40,8 @@ export default async function loader(source: string, inputSourceMap: ?string) {
         directory: userOptions.cacheDirectory,
         sourceFileName: options.sourceFileName,
         identifier: CacheIdentifier.generate({
-          babelCoreVersion: babel.version,
+          babelCore: babel.version,
+          babelLoader: packageJson.version,
           babelConfig: genBabelConfigCacheIdentifier({
             babelConfig: {
               root: config.options.root,
