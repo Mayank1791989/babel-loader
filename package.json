@@ -1,0 +1,82 @@
+{
+  "name": "@playlyfe/babel-loader",
+  "version": "0.0.0-auto-generate-by-semantic-release",
+  "description": "babel module loader for webpack",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "homepage": "https://github.com/Mayank1791989/babel-loader#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mayank1791989/babel-loader.git"
+  },
+  "author": "Mayank Agarwal <mayank@playlyfe.com>",
+  "license": "MIT",
+  "keywords": [
+    "babel-loader",
+    "webpack",
+    "playlyfe"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && babel ./src --out-dir ./lib --ignore '**/__tests__/**,**/node_modules/**'",
+    "test": "yarn check-code && yarn testonly --coverage",
+    "semantic-release": "semantic-release",
+    "flow-typed-update": "rm -rf flow-typed/npm && flow-typed update",
+    "check-code": "yarn lint && yarn flow check",
+    "lint": "eslint src",
+    "testonly": "cross-env NODE_ENV=test jest",
+    "commit": "git-cz"
+  },
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "ansi-escapes": "3.1.0",
+    "ansi-styles": "3.2.1",
+    "cacache": "11.3.1",
+    "chalk": "2.4.1",
+    "diff": "3.5.0",
+    "find-up": "3.0.0",
+    "fs-extra": "7.0.1",
+    "invariant": "2.2.4",
+    "loader-utils": "1.1.0",
+    "lodash": "4.17.11",
+    "resolve-from": "4.0.0",
+    "rev-hash": "2.0.0"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0",
+    "webpack": ">=4"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.1.5",
+    "@babel/core": "7.1.5",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "23.6.0",
+    "babel-preset-playlyfe": "3.0.0",
+    "cross-env": "5.2.0",
+    "cz-conventional-changelog": "2.1.0",
+    "eslint": "5.9.0",
+    "eslint-plugin-playlyfe": "6.0.0",
+    "flow-bin": "0.86.0",
+    "flow-typed": "2.5.1",
+    "husky": "1.1.4",
+    "jest": "23.6.0",
+    "jest-watch-typeahead": "0.2.0",
+    "prettier": "1.15.2",
+    "semantic-release": "15.11.0"
+  },
+  "engines": {
+    "node": ">=8.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
+  }
+}

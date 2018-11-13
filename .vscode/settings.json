@@ -1,0 +1,4 @@
+{
+  "flow.useLSP": true,
+  "flow.pathToFlow": "node_modules/.bin/flow"
+}

@@ -1,0 +1,15 @@
+/* @flow */
+{
+  presets: [
+    [
+      'playlyfe',
+      {
+        react: false,
+        asyncAwait: true,
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
+  ],
+}
