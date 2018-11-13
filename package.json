@@ -78,5 +78,8 @@
     "hooks": {
       "pre-commit": "yarn test"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
