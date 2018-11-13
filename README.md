@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/babel-loader.svg?style=flat-square)](https://www.npmjs.com/package/@playlyfe/babel-loader)
+[![npm](https://img.shields.io/npm/v/@playlyfe/babel-loader.svg?style=flat-square)](https://www.npmjs.com/package/@playlyfe/babel-loader)
 [![npm](https://img.shields.io/npm/dt/@playlyfe/babel-loader.svg?style=flat-square)](https://www.npmjs.com/package/@playlyfe/babel-loader)
 [![Travis](https://img.shields.io/travis/Mayank1791989/babel-loader.svg?style=flat-square)](https://travis-ci.org/Mayank1791989/babel-loader)
 
