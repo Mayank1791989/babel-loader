@@ -1,7 +1,7 @@
 /* @flow */
 import { type Identifier } from './gen';
 import { type JSONString, diffJSONString, toJSONString } from '../json-string';
-import log from '../log';
+import log from '../_log';
 
 export function printDiff(
   a: null | JSONString<Identifier>,

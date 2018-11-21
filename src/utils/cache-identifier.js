@@ -10,7 +10,7 @@ import {
   parseJSONString,
   diffJSONString,
 } from './json-string';
-import log from './log';
+import log from './_log';
 
 type Val = {
   babelConfig: JSONString<Identifier>,

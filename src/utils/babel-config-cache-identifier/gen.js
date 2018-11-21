@@ -5,7 +5,7 @@ import chalk from 'chalk';
 import genFileContentHash from './gen-file-content-hash';
 import genPkgVersion from './gen-pkg-version';
 import { type JSONString, toJSONString } from '../json-string';
-import log from '../log';
+import log from '../_log';
 
 type ConfigItem = Object;
 

@@ -1,6 +1,6 @@
 /* @flow */
 import LoaderError from './utils/Error';
-import log from './utils/log';
+import log from './utils/_log';
 import chalk from 'chalk';
 import * as babel from '@babel/core';
 
