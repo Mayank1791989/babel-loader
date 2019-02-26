@@ -9,6 +9,7 @@ import log from '../_log';
 
 type ConfigItem = Object;
 
+// eslint-disable-next-line no-unused-vars
 type Options = {|
   babelConfig: {|
     root: string,
@@ -32,8 +33,11 @@ export type Identifier = {
   plugins: $ReadOnlyArray<Item>,
 };
 
-export default _memoize(
-  (options: Options): JSONString<Identifier> => {
+// eslint-disable-next-line no-unused-vars
+type ReturnType = JSONString<Identifier>;
+
+export default _memoize<[Options], ReturnType>(
+  options => {
     const { babelConfig, isRelay } = options;
 
     const perfKey = `

@@ -8,8 +8,8 @@ import findFileImports from './find-file-imports';
 import path from 'path';
 import { readJSONSync } from 'fs-extra';
 
-const genPkgVersion = _memoize(
-  (pkg: string, cwd: string): mixed => {
+const genPkgVersion = _memoize<[string, string], mixed>(
+  (pkg, cwd) => {
     const pkgPath = resolveFrom(cwd, pkg);
     let version = null;
     if (!pkgPath) {

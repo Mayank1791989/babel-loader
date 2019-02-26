@@ -32,7 +32,7 @@ export default {
       Object.keys(newVal).forEach(key => {
         if (key !== 'source') {
           // eslint-disable-next-line no-use-before-define
-          printDiff(key, null, newVal[key]);
+          printDiff(key, '', newVal[key] || '');
         }
       });
       return ['new'];
@@ -43,7 +43,7 @@ export default {
       if (newVal[key] !== oldVal[key]) {
         if (key !== 'source') {
           // eslint-disable-next-line no-use-before-define
-          printDiff(key, oldVal[key], newVal[key]);
+          printDiff(key, oldVal[key] || '', newVal[key] || '');
         }
         acc.push(key);
       }
@@ -52,7 +52,7 @@ export default {
   },
 };
 
-const printDiff = _memoize(
+const printDiff = _memoize<[string, string, string], void>(
   (key, oldVal, newVal) => {
     if (key === 'babelConfig') {
       printBabelConfigCacheIdentifierDiff((oldVal: $FixMe), (newVal: $FixMe));
