@@ -3,6 +3,7 @@ import _memoize from 'lodash/memoize';
 import invariant from 'invariant';
 import resolveFrom from 'resolve-from';
 import findUp from 'find-up';
+import isBuiltinModule from 'is-builtin-module';
 import genHash from './gen-hash';
 import findFileImports from './find-file-imports';
 import path from 'path';
@@ -31,6 +32,10 @@ export default genPkgVersion;
 
 const getNodeModuleVersion = _memoize(
   (pkgPath: string): string => {
+    if (isBuiltinModule(pkgPath)) {
+      return getCurrentNodeVersion();
+    }
+
     const { version } = readPkgUp(pkgPath);
     return version;
   },
@@ -52,7 +57,7 @@ function pkgMissingError(pkg: string): Error {
 }
 
 function isNodeModule(pkgPath: string): boolean {
-  return /node_modules/u.test(pkgPath);
+  return /node_modules/u.test(pkgPath) || isBuiltinModule(pkgPath);
 }
 
 function readPkgUp(cwd: string): { version: string } {
@@ -62,4 +67,8 @@ function readPkgUp(cwd: string): { version: string } {
     `[unexpected error] pakage.json not found for '${cwd}'`,
   );
   return readJSONSync(pkgJSONPath);
+}
+
+function getCurrentNodeVersion() {
+  return process.version;
 }
