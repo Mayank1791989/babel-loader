@@ -8,7 +8,7 @@ test('fixture1', () => {
     imports: {
       '@babel/core': '7.5.4',
       diff: '4.0.1',
-      lodash: '4.17.11',
+      lodash: '4.17.14',
       path: process.version,
     },
   });
