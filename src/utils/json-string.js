@@ -5,7 +5,7 @@ import { diffJson } from 'diff';
 export opaque type JSONString<TObject>: string = string;
 
 export function toJSONString<TValue>(val: TValue): JSONString<TValue> {
-  return JSON.stringify(val);
+  return JSON.stringify(val || null) || '';
 }
 
 export function parseJSONString<TValue>(val: JSONString<TValue>): TValue {

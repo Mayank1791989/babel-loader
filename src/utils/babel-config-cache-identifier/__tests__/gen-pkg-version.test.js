@@ -6,7 +6,7 @@ test('fixture1', () => {
   expect(version).toEqual({
     hash: '9a064e2952',
     imports: {
-      '@babel/core': '7.3.4',
+      '@babel/core': '7.5.4',
       diff: '4.0.1',
       lodash: '4.17.11',
       path: process.version,

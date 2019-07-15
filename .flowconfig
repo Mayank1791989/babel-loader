@@ -15,4 +15,4 @@ suppress_type=$FlowFixMe
 suppress_type=$FixMe
 
 [version]
-^0.93.0
+^0.102.0

@@ -30,16 +30,14 @@ const genPkgVersion = _memoize<[string, string], mixed>(
 
 export default genPkgVersion;
 
-const getNodeModuleVersion = _memoize(
-  (pkgPath: string): string => {
-    if (isBuiltinModule(pkgPath)) {
-      return getCurrentNodeVersion();
-    }
+const getNodeModuleVersion = _memoize((pkgPath: string): string => {
+  if (isBuiltinModule(pkgPath)) {
+    return getCurrentNodeVersion();
+  }
 
-    const { version } = readPkgUp(pkgPath);
-    return version;
-  },
-);
+  const { version } = readPkgUp(pkgPath);
+  return version;
+});
 
 function getLocalFileVersion(filePath: string): mixed {
   const { code, imports } = findFileImports(filePath);
