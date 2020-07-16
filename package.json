@@ -40,7 +40,7 @@
     "invariant": "2.2.4",
     "is-builtin-module": "3.0.0",
     "loader-utils": "1.2.3",
-    "lodash": "4.17.14",
+    "lodash": "4.17.19",
     "resolve-from": "5.0.0",
     "rev-hash": "3.0.0"
   },
