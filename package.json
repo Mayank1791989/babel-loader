@@ -36,7 +36,7 @@
     "chalk": "2.4.2",
     "diff": "4.0.1",
     "find-up": "4.1.0",
-    "fs-extra": "8.1.0",
+    "fs-extra": "^9.0.0",
     "invariant": "2.2.4",
     "is-builtin-module": "3.0.0",
     "loader-utils": "1.2.3",
